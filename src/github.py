@@ -1,5 +1,6 @@
 import logging
 import ebbs
+import subprocess
 import json
 
 class github(ebbs.Builder):
