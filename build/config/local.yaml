@@ -6,7 +6,5 @@ next:
 	copy: 
 	- /src: pkg/
 	config: 
-		name: boilerplate
-		type: build
 		clear_build_path: false
 		visibility: public
