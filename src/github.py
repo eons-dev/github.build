@@ -1,5 +1,6 @@
 import logging
 import ebbs
+import json
 
 class github(ebbs.Builder):
     def __init__(this, name="github"):
@@ -13,6 +14,7 @@ class github(ebbs.Builder):
         this.Login()
 
     def Login(this):
-        this.RunCommand(f"echo {this.kwArgs['pat']} | gh auth login --with-token")
+        this.RunCommand(f"echo '{this.pat}' | gh auth login --with-token")
         code, user = this.RunCommand("gh api user", saveout=True)
-        logging.info(f"Logged in as: {user['login']}")
+        user = f"{user[0]}}}" #output correction, I guess.
+        logging.info(f"Logged in as: {json.loads(user)['login']}")
