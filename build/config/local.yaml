@@ -1,0 +1,12 @@
+next: 
+- build: publish
+	run_when_any: 
+	- release
+	build_in: pkg
+	copy: 
+	- /src: pkg/
+	config: 
+		name: boilerplate
+		type: build
+		clear_build_path: false
+		visibility: public
